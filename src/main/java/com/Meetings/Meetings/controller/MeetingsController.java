@@ -19,8 +19,8 @@ public class MeetingsController {
     public ResponseEntity<MeetingsDTO> findMeetingById(@PathVariable Integer id) {
         return ResponseEntity.ok(meetingsService.findMeetingById(id));
     }
-    @GetMapping
-    public ResponseEntity<List <MeetingsDTO>> findAllMeetings(LocalDate data){
+    @GetMapping("/localdate/{data}")
+    public ResponseEntity<List <MeetingsDTO>> findAllMeetings(@PathVariable LocalDate data){
         return ResponseEntity.ok(meetingsService.findAllMeetings(data));
     }
 

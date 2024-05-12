@@ -55,7 +55,7 @@ public class MeetingControllerTest extends BaseTest {
     public void test_findAllMeetings() throws Exception {
         List<MeetingsDTO> meetingsDTOList = new ArrayList<>();
         doReturn(meetingsDTOList).when(meetingsService).findAllMeetings(any());
-        mockMvc.perform(MockMvcRequestBuilders.get("/meetings"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/meetings/localdate/2024-05-12"))
                 .andExpect(status().isOk());
     }
 
